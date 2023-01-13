@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lr4-7</title>
+    <meta charset="utf-8">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/javascripts/script.js"></script>
+</head>
+<body>
+
+<header align="center">
+    <h1>Лабораторная работа №4-6</h1>
+    <h2>Виконав: Куликовський Владилсав Геннадійович</h2>
+    <h2>Група: ТР-13</h2>
+    <h2>Завдання: Основи JS. Робота з прототипами об’єктів.</h2>
+</header>
+
+<hr>
+<div id="input-field">
+    <p><label for="name">Введіть ім'я та прізвище</label></p>
+    <input type="text" id="name" name="name">
+    <p><label for="group">Введіть групу</label></p>
+    <input type="text" id="group" name="group">
+</div>
+<form action="/telegram" method="POST" id="quizForm" name="quizForm">
+   
+    <hr>
+    <div id="quiz"></div>
+    <div id="results"></div>
+    <button type="submit" id="submit" value="Send" form="quizForm">Отримати та надіслати результати</button>
+</form>
+
+<div id="Objects">
+    <div id="task1">
+        <h2>Завдання 1</h2>
+        <h3>Створити об'єкт Користувача з властивостями Ім'я та Прізвище</h3>
+        <label class="labels">
+            Введіть ім'я користувача
+            <input class="inputs" type="text" id="userObjectName">
+        </label>
+        <label class="labels">
+            Введіть прізвище користувача
+            <input class="inputs" type="text" id="userObjectSurname">
+        </label>
+        <button onclick="task1()" id="task1">Виконати</button>
+        <div id="task1Result"></div>
+    </div>
+    <div id="task2">
+        <h2>Завдання 2</h2>
+        <h3>Створити об'єкт Студента з властивостями Спеціальність та Група. Створити методи для редагування даних</h3>
+        <label class="labels">
+            Введіть спеціальність студента
+            <input class="inputs" type="text" id="studentObjectSpecialty">
+        </label>
+        <label class="labels">
+            Введіть групу студента
+            <input class="inputs" type="text" id="studentObjectGroup">
+        </label>
+        <button onclick="task2()" id="task2">Додати/редагувати дані</button>
+        <button onclick="task2clearspecialty()" id="task2clearspecialty">Видалити спеціальність</button>
+        <button onclick="task2cleargroup()" id="task2cleargroup">Видалити групу</button>
+        <div id="task2Result"></div>
+    </div>
+    <div id="task3">
+        <h2>Завдання 3</h2>
+        <h3>Реалізувати копіювання властивостей і методів об'єктів «Користувач» і «Студент»</h3>
+        <button onclick="task3user()" id="task3">Копіювати об'єкт «Користувач»</button>
+        <button onclick="task3student()" id="task3">Копіювати об'єкт «Студент»</button>
+        <div id="task3Result1"></div>
+        <br>
+        <div id="task3Result2"></div>
+    </div>
+    <div id="task4">
+        <h2>Завдання 4</h2>
+        <h3>Додати в прототип об’єкту «Студент» метод «Показати дані»</h3>
+        <button onclick="task4()" id="task4">Показати дані</button>
+        <div id="task4Result"></div>
+    </div>
+    <div id="task5">
+        <h2>Завдання 5</h2>
+        <h3>Створити об’єкт «Успішність», що наслідує властивості і методи об’єкту «Студент»<br>
+            і має додаткові властивості «Тест», «Спроба», «Бали» і метод «Розрахунок середнього балу»<br> (за декілька спроб).
+            Перевизначити в об’єкті «Успішність» метод «Показати дані».
+        </h3>
+        <label class="labels">
+            Введіть назву теста
+            <input class="inputs" type="text" id="progressTest">
+        </label>
+        <label class="labels">
+            Введіть кількість спроб
+            <input class="inputs" type="text" id="progressAttempt">
+        </label>
+        <button onclick="task5GetGrades()" id="task5GetGrades">Ввести оцінки</button>
+        <div id="inputsContainer"></div>
+        <button class="hide" onclick="task5GetAverageGrade()" id="task5GetAverageGrade">Розрахувати середній бал</button>
+        <div id="task5Result"></div>
+    </div>
+    <div id="task6">
+        <h2>Завдання 6</h2>
+        <h3>Реалізувати класи «Студент» і «Успішність» з такими же<br>
+            методами і властивостями як і попередні об’єкти. «Успішність» наслідує<br>
+            методи та властивості від «Студент». При реалізації використовувати<br>
+            геттери і сеттери, наприклад, для перевірки даних чи виведення в різних виглядах інформацію.
+        </h3>
+        <label class="labels">
+            Введіть ім'я користувача
+            <input class="inputs" type="text" id="userObjectName1">
+        </label>
+        <label class="labels">
+            Введіть прізвище користувача
+            <input class="inputs" type="text" id="userObjectSurname1">
+        </label>
+
+        <label class="labels">
+            Введіть спеціальність студента
+            <input class="inputs" type="text" id="studentObjectSpecialty1">
+        </label>
+        <label class="labels">
+            Введіть групу студента
+            <input class="inputs" type="text" id="studentObjectGroup1">
+        </label>
+
+        <label class="labels">
+            Введіть назву теста
+            <input class="inputs" type="text" id="progressTest1">
+        </label>
+        <label class="labels">
+            Введіть кількість спроб
+            <input class="inputs" type="text" id="progressAttempt1">
+        </label>
+        <button onclick="task6()" id="task6GetGrades">Ввести дані</button>
+        <div id="inputsContainer1"></div>
+        <button class="hide" onclick="task6GetAverageGrade()" id="task6GetAverageGrade">Розрахувати середній бал</button>
+        <div id="task6Result"></div>
+        
+    </div>
+</div>
+
+
+</body>
+</html>

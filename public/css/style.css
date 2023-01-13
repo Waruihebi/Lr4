@@ -1,0 +1,58 @@
+header {
+  background-color: lightgrey;
+}
+
+.hide {
+  display: none;
+}
+
+#input-field {
+  margin: 20px;
+}
+
+#quiz {
+  margin: 20px;
+}
+
+#quiz > * {
+  margin: 5px;
+}
+
+#submit {
+  margin: 20px;
+}
+
+.questions-container {
+  display: flex;
+}
+
+.dropbox {
+  margin-left: 5px;
+  height: 25px;
+  width: 100px;
+  border: solid 1px black;
+}
+
+.dropbox-active {
+  border: dashed 1px red;
+}
+
+.dragtext {
+  margin: 5px 5px 10px 30px;
+}
+
+.dragtext-container {
+  border: solid 1px black;
+  height: 25px;
+  width: 100px;
+}
+
+.labels {
+  display: block;
+  margin: 5px;
+}
+
+.inputs {
+  display: block;
+}
+
